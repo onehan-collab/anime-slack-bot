@@ -1,0 +1,24 @@
+name: Quarterly Anime Slack Bot
+
+on:
+  schedule:
+      - cron: '0 0 1 1,4,7,10 *'
+        workflow_dispatch:
+
+        jobs:
+          run_bot:
+              runs-on: ubuntu-latest
+                  steps:
+                        - name: Checkout repository
+                                uses: actions/checkout@v3
+
+                                      - name: Set up Python
+                                              uses: actions/setup-python@v4
+                                                      with:
+                                                                python-version: '3.9'
+
+                                                                      - name: Run anime bot
+                                                                              env:
+                                                                                        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+                                                                                                run: python anime_bot.py
+                                                                                                
