@@ -13,7 +13,7 @@ from datetime import datetime
 # ── 설정 ──────────────────────────────────────────────
 # 깃허브에 올릴 때 토큰이 유출되지 않도록 환경 변수만 사용합니다.
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
-SLACK_CHANNEL   = os.environ.get("SLACK_CHANNEL", "#xyz_test")   # 발송할 채널
+SLACK_CHANNEL   = os.environ.get("SLACK_CHANNEL", "#이세계-출입구")   # 발송할 채널
 
 if not SLACK_BOT_TOKEN:
     raise ValueError("보안을 위해 SLACK_BOT_TOKEN 환경 변수가 필요합니다. (GitHub Secrets에 등록해주세요)")
